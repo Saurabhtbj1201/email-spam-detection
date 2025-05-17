@@ -159,6 +159,11 @@ def predict():
         logger.error(f"Prediction failed: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
+# Add a root route for health/status
+@app.route('/')
+def index():
+    return "Email Spam Detection API is running."
+
 # Run the app
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))

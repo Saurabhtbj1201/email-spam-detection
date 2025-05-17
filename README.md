@@ -12,9 +12,14 @@ A web application for detecting whether an email message is spam or safe using a
 
 - `templates/index.html` - Main web interface
 - `data/spam.csv` - Sample dataset of emails
-- `app.py` (or similar) - Flask backend (not included here)
+- `app.py` - Flask backend
 
-## Setup
+## Live Demo
+
+- **Frontend:** [https://ems-bice-rho.vercel.app/](https://ems-bice-rho.vercel.app/)
+- **Backend API:** [https://esd-z761.onrender.com/](https://esd-z761.onrender.com/)
+
+## Setup (Local Development)
 
 1. **Clone the repository**  
    ```
@@ -25,7 +30,7 @@ A web application for detecting whether an email message is spam or safe using a
 2. **Install dependencies**  
    Make sure you have Python 3.x and pip installed.  
    ```
-   pip install flask scikit-learn pandas
+   pip install -r requirements.txt
    ```
 
 3. **Run the Flask app**  
@@ -34,10 +39,30 @@ A web application for detecting whether an email message is spam or safe using a
    ```
 
 4. **Open the web interface**  
-   Go to [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+   Open `templates/index.html` in your browser, or deploy the frontend as shown below.
+
+## Deployment
+
+- **Frontend:** Deployed on [Vercel](https://vercel.com/)  
+  (see `templates/index.html`)
+
+- **Backend:** Deployed on [Render](https://render.com/)  
+  [https://esd-z761.onrender.com/](https://esd-z761.onrender.com/)
 
 ## Usage
 
 - Enter an email message in the text area and click "Check" to classify it.
 - The result will display whether the email is spam or safe.
 - All emails and their classifications are shown in a table (if implemented in backend).
+
+## API Endpoints
+
+- `POST /predict`  
+  Request JSON: `{ "message": "your email text" }`  
+  Response JSON: `{ "message": "...", "prediction": "spam" | "safe" }`
+
+- `GET /`  
+  Returns a simple status message.
+
+- `GET /emails`  
+  (If implemented) Returns all emails and their classifications.
