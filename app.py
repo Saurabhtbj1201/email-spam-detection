@@ -14,6 +14,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 import logging
+import os
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -160,4 +161,5 @@ def predict():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
