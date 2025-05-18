@@ -23,7 +23,7 @@ A web application for detecting whether an email message is spam or safe using a
 
 1. **Clone the repository**  
    ```
-   git clone <your-repo-url>
+   git clone https://github.com/Saurabhtbj1201/email-spam-detection
    cd email_spam_detection
    ```
 
@@ -46,7 +46,8 @@ A web application for detecting whether an email message is spam or safe using a
 - **Frontend:** Deployed on [Vercel](https://vercel.com/)  
   (see `templates/index.html`)
 
-- **Backend:** Deployed on [Render](https://render.com/)  
+- **Backend:**
+  Deployed on [Render](https://render.com/)  
   [https://esd-z761.onrender.com/](https://esd-z761.onrender.com/)
 
 ## Usage
