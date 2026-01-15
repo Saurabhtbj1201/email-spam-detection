@@ -79,7 +79,7 @@ def preprocess_message(message):
     except Exception as e:
         logger.error(f"Error preprocessing message: {str(e)}")
         return message  # Fallback to original message
-
+    
 # Update vectorizer to use n-grams
 vectorizer = TfidfVectorizer(stop_words='english', ngram_range=(1, 2))
 
